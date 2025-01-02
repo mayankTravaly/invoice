@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Be Vietnam Pro", serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        background-color: #fff;
+        border: 1px solid gray;
+      }
+
+      .individual-padding {
+        padding: 0 20px;
+      }
+
+      .company-name {
+        line-height: 5%;
+      }
+
+      .header-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid gray;
+      }
+
+      .header-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+        width: 100%;
+      }
+
+      .company-details h2 {
+        margin: 0;
+        font-size: 1.2em;
+        margin-bottom: 8px;
+      }
+
+      .company-details p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      .company-address {
+        /* line-height: 5%; */
+        font-size: 12px;
+      }
+
+      .gst-invoice {
+        text-align: right;
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-right: 2%;
+        width: 50%;
+      }
+
+      .content-wrapper {
+        display: flex;
+      }
+
+      .content-left {
+        flex: 1;
+        padding: 20px;
+        border-right: 1px solid gray;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .info-row strong {
+        flex: 1;
+        text-align: left;
+        font-weight: 500;
+        color: #555353;
+        font-size: 12px;
+      }
+
+      .colon {
+        flex: 0;
+        margin: 0 5px;
+        text-align: center;
+      }
+
+      .info-detail {
+        flex: 1;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+      }
+
+      .content-right {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .bill-to-header {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        padding-left: 20px;
+        color: #555353;
+        font-size: 12px;
+      }
+
+      .biller-address {
+        padding: 0 20px;
+        border-bottom: 1px solid gray;
+        font-size: 12px;
+      }
+
+      .biller-address p {
+        line-height: 8px;
+      }
+
+      .subject {
+        font-size: 12px;
+      }
+
+      .gray-text {
+        color: #555353;
+        font-weight: 600;
+      }
+
+      .small-font {
+        font-size: 12px;
+      }
+
+      .total-balance {
+        font-weight: 700;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 0.9em;
+        text-align: left;
+        font-size: 12px;
+      }
+
+      th,
+      td {
+        border: 1px solid gray;
+        padding: 8px 10px;
+      }
+
+      th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: #fafafa;
+      }
+
+      tbody tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      .nested-header {
+        font-size: 0.8em;
+        font-weight: bold;
+        background-color: #eaeaea;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .total-in-words p {
+        line-height: 10px;
+      }
+
+      .total-section {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid gray;
+        margin-top: 20px;
+      }
+
+      .total-text {
+        flex: 1; /* Occupy left space */
+        font-size: 0.9em;
+      }
+
+      .total-text p {
+        margin: 5px 0;
+      }
+
+      .total-numbers {
+        flex: 1; /* Occupy right space */
+        text-align: right; /* Align numbers to the right */
+        font-size: 0.9em;
+      }
+
+      .total-numbers p {
+        margin: 5px 0;
+      }
+
+      .payment-btn{
+        padding: 1%;
+        background-color: white;
+        border: 1px solid gray;
+      }
+
+      .payment-btn:hover{
+        cursor: pointer;
+      }
+
+      .signature {
+        margin-top: 20px;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .total-section-pointers{
+        color:black;
+        font-weight: 700;
+      }
+
+      .total-section-left {
+        flex: 2;
+      }
+
+      .total-section-right {
+        flex: 1;
+        border-bottom: 1px solid gray;
+        border-left: 1px solid gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header-info">
+        <!-- Wrapper for Padding -->
+        <div class="header-wrapper">
+          <img
+            src="https://dwq3yv87q1b43.cloudfront.net/public/static/logo/logov1.png"
+            height="100px"
+            alt="Company Logo"
+            class="logo"
+          />
+          <div class="company-details">
+            <div class="company-name">
+              <h3>MyTravaly Worldwide Travel Technology</h3>
+              <h3>Private Limited</h3>
+            </div>
+
+            <div class="company-address">
+              <p>Company ID: U63090KA2019PTC123414</p>
+              <p>171, Panduranga Nagar, 1st Cross, off B.G Road</p>
+              <p>Bengaluru Karnataka 560076</p>
+              <p>India</p>
+              <p>GSTIN: 29AAMCM6009N1ZU</p>
+            </div>
+          </div>
+        </div>
+        <div class="gst-invoice">GST INVOICE</div>
+      </div>
+
+      <div class="content">
+        <div class="content-wrapper">
+          <div class="content-left">
+            <div class="info-row">
+              <strong>#</strong>
+              <span class="info-detail">INV-17</span>
+            </div>
+            <div class="info-row">
+              <strong>Invoice Date</strong>
+              <span class="info-detail">27/12/2024</span>
+            </div>
+            <div class="info-row">
+              <strong>Terms</strong>
+              <span class="info-detail">Due On Receipt</span>
+            </div>
+            <div class="info-row">
+              <strong>Due Date</strong>
+              <span class="info-detail">27/12/2024</span>
+            </div>
+            <div class="info-row">
+              <strong>P.O.#</strong>
+              <span class="info-detail">SO-17</span>
+            </div>
+          </div>
+
+          <div class="content-right">
+            <div class="info-row">
+              <strong>Place of Supply</strong>
+              <span class="info-detail">Tamil Nadu(33)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="invoice-details">
+          <div class="bill-to-header">
+            <h4>Bill To:</h4>
+          </div>
+
+          <div class="biller-address">
+            <p>Rob & Joe Traders</p>
+            <p>34, Riche Street</p>
+            <p>Chennai, Tamil Nadu 631603</p>
+            <p>India</p>
+            <p><strong>GSTIN:</strong> 33GSPTN0372G1ZC</p>
+          </div>
+
+          <div class="table">
+            <div class="individual-padding subject">
+              <p class="gray-text">Subject:</p>
+              <p>Description</p>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th rowspan="2">#</th>
+                  <th rowspan="2">Hotels, Room &<br />Description</th>
+                  <th rowspan="2">HSN/SAC</th>
+                  <th rowspan="2"># of Nights</th>
+                  <th rowspan="2">Tariffs</th>
+                  <th rowspan="2">Discount</th>
+                  <th colspan="2">CGST</th>
+                  <th colspan="2">SGST</th>
+                  <th rowspan="2">Amount</th>
+                </tr>
+                <tr class="nested-header">
+                  <th class="center">%</th>
+                  <th class="center">Amt</th>
+                  <th class="center">%</th>
+                  <th class="center">Amt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="center">1</td>
+                  <td>
+                    Brochure Design<br />
+                    Single Sided Color
+                  </td>
+                  <td class="center">52161559</td>
+                  <td class="center">1.00 Nos</td>
+                  <td class="center">300.00</td>
+                  <td class="center">0.00</td>
+                  <td class="center">12%</td>
+                  <td class="center">18.00</td>
+                  <td class="center">12%</td>
+                  <td class="center">18.00</td>
+                  <td class="center">300.00</td>
+                </tr>
+                <tr>
+                  <td class="center">2</td>
+                  <td>
+                    Web Design Packages (Template) - Basic<br />
+                    Custom Themes for your business. Inclusive of<br />
+                    10 hours of marketing and annual training.
+                  </td>
+                  <td class="center">52161559</td>
+                  <td class="center">1.00 Nos</td>
+                  <td class="center">250.00</td>
+                  <td class="center">0.00</td>
+                  <td class="center">12%</td>
+                  <td class="center">15.00</td>
+                  <td class="center">12%</td>
+                  <td class="center">15.00</td>
+                  <td class="center">250.00</td>
+                </tr>
+                <tr>
+                  <td class="center">3</td>
+                  <td>
+                    Print Ad - Basic - Color<br />
+                    Print Ad 1/8 size Color
+                  </td>
+                  <td class="center">52161559</td>
+                  <td class="center">1.00 Nos</td>
+                  <td class="center">80.00</td>
+                  <td class="center">0.00</td>
+                  <td class="center">12%</td>
+                  <td class="center">4.80</td>
+                  <td class="center">12%</td>
+                  <td class="center">4.80</td>
+                  <td class="center">80.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="total-section">
+          <div class="total-section-left individual-padding">
+            <div class="total-in-words">
+              <p class="gray-text small-font">Total in words</p>
+              <i class="small-font total-balance">
+                Indian Rupee Seven Hundred and Sixty Paise Only
+              </i>
+            </div>
+
+            
+            <div class="total-notes">
+              <p class="gray-text small-font">Notes:</p>
+              <p class="small-font">Thank you for the payment. You just made our day.</p>
+            </div>
+
+            <br />
+
+            <div class="payment small-font">
+              Payment Options &nbsp;
+              <button class="payment-btn">
+                Card
+                <i class="fa-regular fa-credit-card fa-lg"></i>
+              </button>
+            </div>
+
+            <p class="small-font">
+              <strong>Terms & Conditions:</strong> Your company's Terms and
+              Conditions will be displayed here. You can add it in the Invoice
+              Preferences page under Settings.
+            </p>
+          </div>
+
+          <div class="total-numbers total-section-right">
+            <div>
+              <div class="total-details individual-padding">
+                <p class="info-row"><strong>Sub Total:</strong> ₹630.00</p>
+                <p class="info-row"><strong>CGST (12%):</strong> ₹37.80</p>
+                <p class="info-row"><strong>SGST (12%):</strong> ₹37.80</p>
+                <p class="info-row"><strong class="total-section-pointers">Total:</strong> ₹705.60</p>
+                <p class="info-row"><strong>Payment Made:</strong> ₹100.00</p>
+                <p class="info-row"><strong class="total-section-pointers">Balance Due:</strong> ₹605.60</p>
+              </div>
+              <hr />
+              <div class="signature individual-padding">
+                <p>
+                  <img
+                    src="https://w7.pngwing.com/pngs/402/202/png-transparent-postage-stamps-rubber-stamp-stamp-logo-template-angle-text-thumbnail.png"
+                    alt=""
+                    height="55px"
+                  />
+                </p>
+                <p><strong>Authorized Signature</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
