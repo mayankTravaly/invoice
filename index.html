@@ -1,13 +1,11 @@
+<!-- Spreadsheet template -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice Template</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -192,10 +190,6 @@
         background-color: #fafafa;
       }
 
-      tbody tr:hover {
-        background-color: #f1f1f1;
-      }
-
       .nested-header {
         font-size: 0.8em;
         font-weight: bold;
@@ -218,7 +212,7 @@
       }
 
       .total-text {
-        flex: 1; /* Occupy left space */
+        flex: 1; 
         font-size: 0.9em;
       }
 
@@ -227,23 +221,13 @@
       }
 
       .total-numbers {
-        flex: 1; /* Occupy right space */
-        text-align: right; /* Align numbers to the right */
+        flex: 1;
+        text-align: right; 
         font-size: 0.9em;
       }
 
       .total-numbers p {
         margin: 5px 0;
-      }
-
-      .payment-btn {
-        padding: 1%;
-        background-color: white;
-        border: 1px solid gray;
-      }
-
-      .payment-btn:hover {
-        cursor: pointer;
       }
 
       .signature {
@@ -430,15 +414,8 @@
                     <th rowspan="2"># of Nights</th>
                     <th rowspan="2">Tariffs</th>
                     <th rowspan="2">Discount</th>
-                    <th colspan="2">CGST</th>
-                    <th colspan="2">SGST</th>
+                    <th colspan="">Tax</th>
                     <th rowspan="2">Amount</th>
-                  </tr>
-                  <tr class="nested-header">
-                    <th class="center">%</th>
-                    <th class="center">Amt</th>
-                    <th class="center">%</th>
-                    <th class="center">Amt</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -452,9 +429,6 @@
                     <td class="center">1.00 Nos</td>
                     <td class="center">300.00</td>
                     <td class="center">0.00</td>
-                    <td class="center">12%</td>
-                    <td class="center">18.00</td>
-                    <td class="center">12%</td>
                     <td class="center">18.00</td>
                     <td class="center">300.00</td>
                   </tr>
@@ -469,9 +443,6 @@
                     <td class="center">1.00 Nos</td>
                     <td class="center">250.00</td>
                     <td class="center">0.00</td>
-                    <td class="center">12%</td>
-                    <td class="center">15.00</td>
-                    <td class="center">12%</td>
                     <td class="center">15.00</td>
                     <td class="center">250.00</td>
                   </tr>
@@ -485,9 +456,6 @@
                     <td class="center">1.00 Nos</td>
                     <td class="center">80.00</td>
                     <td class="center">0.00</td>
-                    <td class="center">12%</td>
-                    <td class="center">4.80</td>
-                    <td class="center">12%</td>
                     <td class="center">4.80</td>
                     <td class="center">80.00</td>
                   </tr>
@@ -506,23 +474,7 @@
               </i>
             </div>
 
-            <div class="total-notes">
-              <p class="gray-text small-font">Notes:</p>
-              <p class="small-font">
-                Thank you for the payment. You just made our day.
-              </p>
-            </div>
-
-            <br />
-
-            <div class="payment small-font">
-              Payment Options &nbsp;
-              <button class="payment-btn">
-                Card
-                <i class="fa-regular fa-credit-card fa-lg"></i>
-              </button>
-            </div>
-
+            
             <p class="small-font">
               <strong>Terms & Conditions:</strong> Your company's Terms and
               Conditions will be displayed here. You can add it in the Invoice
