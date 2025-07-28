@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Invoice - Web Reservation Fees</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Be Vietnam Pro", serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        background-color: #fff;
+        border: 1px solid gray;
+      }
+
+      .individual-padding {
+        padding: 0 20px;
+      }
+
+      .company-name {
+        line-height: 5%;
+      }
+
+      .header-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid gray;
+      }
+
+      .header-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+        width: 100%;
+      }
+
+      .company-details h2 {
+        margin: 0;
+        font-size: 1.2em;
+        margin-bottom: 8px;
+      }
+
+      .company-details p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      .company-address {
+        font-size: 12px;
+      }
+
+      .invoice-title {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px;
+        background-color: #f4f4f4;
+        border-bottom: 1px solid gray;
+      }
+
+      .gst-invoice {
+        text-align: right;
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-right: 2%;
+        width: 50%;
+      }
+
+      .content-wrapper {
+        display: flex;
+      }
+
+      .content-left {
+        flex: 1;
+        padding: 20px;
+        border-right: 1px solid gray;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .info-row strong {
+        flex: 1;
+        text-align: left;
+        font-weight: 500;
+        color: #555353;
+        font-size: 12px;
+      }
+
+      .info-detail {
+        flex: 1;
+        text-align: left;
+        font-weight: 700;
+        font-size: 12px;
+      }
+
+      .content-right {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .bill-to-header {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        padding-left: 20px;
+        color: #555353;
+        font-size: 12px;
+      }
+
+      .biller-address {
+        padding: 0 20px;
+        border-bottom: 1px solid gray;
+        font-size: 12px;
+      }
+
+      .biller-address p {
+        line-height: 8px;
+      }
+
+      .gray-text {
+        color: #555353;
+        font-weight: 600;
+      }
+
+      .small-font {
+        font-size: 12px;
+      }
+
+      .total-balance {
+        font-weight: 700;
+      }
+
+      .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 12px;
+        text-align: left;
+      }
+
+      th, td {
+        border: 1px solid gray;
+        padding: 8px 10px;
+      }
+
+      th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: #fafafa;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .right {
+        text-align: right;
+      }
+
+      .total-in-words p {
+        line-height: 10px;
+      }
+
+      .total-section {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid gray;
+        margin-top: 20px;
+      }
+
+      .total-section-left {
+        flex: 2;
+      }
+
+      .total-section-right {
+        flex: 1;
+        border-bottom: 1px solid gray;
+        border-left: 1px solid gray;
+      }
+
+      .signature {
+        margin-top: 20px;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .total-section-pointers {
+        color: black;
+        font-weight: 700;
+      }
+
+      .footer-note {
+        font-size: 10px;
+        text-align: center;
+        padding: 10px;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .header-info {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .gst-invoice {
+          margin-top: 10px;
+        }
+
+        .content-wrapper {
+          flex-direction: column;
+        }
+
+        .content-left,
+        .content-right {
+          border: none;
+        }
+
+        .table-container {
+          margin-top: 10px;
+        }
+
+        table {
+          font-size: 0.8em;
+        }
+
+        th,
+        td {
+          padding: 1px;
+        }
+
+        .total-section {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          width: 100%;
+          padding: 10px;
+        }
+
+        .header-info {
+          padding: 10px;
+        }
+
+        table th,
+        table td {
+          font-size: 0.7em;
+          padding: 1px;
+        }
+
+        .total-section {
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="invoice-title">
+        TAX INVOICE — WEB RESERVATION FEES (MYTRAVALY)<br>
+        MYTRAVALY — TAX INVOICE
+      </div>
+      
+      <div class="header-info">
+        <div class="header-wrapper">
+          <img
+            src="https://dwq3yv87q1b43.cloudfront.net/public/static/logo/logov1.png"
+            height="100px"
+            alt="Company Logo"
+            class="logo"
+          />
+          <div class="company-details">
+            <div class="company-name">
+              <h3>MyTravaly Worldwide Travel Technology</h3>
+              <h3>Private Limited</h3>
+            </div>
+
+            <div class="company-address">
+              <p>Company ID: U63090KA2019PTC123414</p>
+              <p>171, Panduranga Nagar, 1st Cross, off B.G Road</p>
+              <p>Bengaluru Karnataka 560076</p>
+              <p>India</p>
+              <p>GSTIN: 29AAMCM6009N1ZU</p>
+            </div>
+          </div>
+        </div>
+        <div class="gst-invoice">TAX INVOICE</div>
+      </div>
+
+      <div class="content">
+        <div class="content-wrapper">
+          <div class="content-left">
+            <div class="info-row">
+              <strong>Invoice No.</strong>
+              <span class="info-detail">MTR-TX-20250528002</span>
+            </div>
+            <div class="info-row">
+              <strong>Invoice Date</strong>
+              <span class="info-detail">28-07-2025</span>
+            </div>
+            <div class="info-row">
+              <strong>Booking ID</strong>
+              <span class="info-detail">MTBK25000000277</span>
+            </div>
+          </div>
+
+          <div class="content-right">
+            <div class="info-row">
+              <strong>Place of Supply</strong>
+              <span class="info-detail">Office Location</span>
+            </div>
+            <div class="info-row">
+              <strong>MyTravaly GSTIN</strong>
+              <span class="info-detail">29AAMCM6009N1ZU</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="invoice-details">
+          <div class="bill-to-header">
+            <h4>Billed To:</h4>
+          </div>
+
+          <div class="biller-address">
+            <p>Name</p>
+            <p>Address</p>
+            <p>India</p>
+          </div>
+
+          <div class="bill-to-header">
+            <h4>Supplier:</h4>
+          </div>
+
+          <div class="biller-address">
+            <p>MyTravaly Worldwide Travel Technology Pvt Ltd</p>
+            <p>171, Panduranga Nagar, 1st Cross, off B.G Road</p>
+            <p>Bengaluru Karnataka 560076</p>
+            <p>India</p>
+          </div>
+
+          <div class="table">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>SAC</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>Amount (INR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Reservation Processing Service</td>
+                    <td class="center">998552</td>
+                    <td class="center">1</td>
+                    <td class="center">—</td>
+                    <td class="right">80.40</td>
+                  </tr>
+                  <tr>
+                    <td>Add: IGST @18%</td>
+                    <td class="center">—</td>
+                    <td class="center">—</td>
+                    <td class="center">—</td>
+                    <td class="right">14.472</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Total Invoice Value</strong></td>
+                    <td class="center">—</td>
+                    <td class="center">—</td>
+                    <td class="center">—</td>
+                    <td class="right"><strong>94.872</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-section">
+          <div class="total-section-left individual-padding">
+            <div class="total-in-words">
+              <p class="gray-text small-font">Amount in words:</p>
+              <i class="small-font total-balance">
+                Ninety-Four Rupees and Eighty-Seven Paise Only
+              </i>
+            </div>
+
+            <p class="small-font">
+              <strong>Note:</strong> This invoice is for reservation processing services only. 
+              Room charges are billed separately by the hotel.
+            </p>
+          </div>
+
+          <div class="total-section-right">
+            <div class="signature individual-padding">
+              <p>
+                <img
+                  src="https://w7.pngwing.com/pngs/402/202/png-transparent-postage-stamps-rubber-stamp-stamp-logo-template-angle-text-thumbnail.png"
+                  alt=""
+                  height="55px"
+                />
+              </p>
+              <p><strong>Authorized Signature</strong></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-note">
+          For any queries regarding this invoice, please contact accounts@mytravaly.com
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
