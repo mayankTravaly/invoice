@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payout Confirmation - MyTravaly</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #f7f7f7;
+        }
+        
+        /* Email Container */
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 20px auto;
+            border: 1px solid #dddddd;
+        }
+        
+        /* Header */
+        .header {
+            padding: 25px;
+            text-align: center;
+            background-color: #0066cc;
+            color: white;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .confirmation-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        /* Content */
+        .content {
+            padding: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0066cc;
+            margin: 25px 0 15px 0;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 8px;
+        }
+        
+        /* Details Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #555555;
+            font-size: 14px;
+        }
+        
+        .detail-value {
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        /* Payment Summary */
+        .payment-summary {
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .payment-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .payment-total {
+            font-weight: 600;
+            border-top: 1px solid #dddddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777777;
+            border-top: 1px solid #eeeeee;
+            background-color: #fafafa;
+        }
+        
+        .highlight-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://mytravaly.com/logo.png" alt="MyTravaly Logo" class="logo">
+            <h1 class="confirmation-title">Payout Confirmation</h1>
+            <p>Payment successfully processed for your property</p>
+        </div>
+        
+        <div class="content">
+            <p>Dear <strong>Anupam International DEMO</strong>,</p>
+            <p>We are pleased to inform you that the payment for your recent bookings has been successfully processed. Below are the transaction details:</p>
+            
+            <div class="highlight-box">
+                <p><strong>Payment Status:</strong> Completed</p>
+                <p><strong>Payment Date:</strong> 05 August 2025</p>
+                <p><strong>Reference Number:</strong> MTTRN25000004567</p>
+            </div>
+            
+            <h3 class="section-title">Property Information</h3>
+            <div class="details-grid">
+                <div class="detail-label">Property Name:</div>
+                <div class="detail-value">Anupam International DEMO</div>
+                
+                <div class="detail-label">Property ID:</div>
+                <div class="detail-value">MTPID2500001234</div>
+                
+                <div class="detail-label">Bank Account:</div>
+                <div class="detail-value">XXXXXX7890 (HDFC Bank)</div>
+            </div>
+            
+            <h3 class="section-title">Payout Summary</h3>
+            <div class="payment-summary">
+                <div class="payment-row">
+                    <span>Total Bookings:</span>
+                    <span>3</span>
+                </div>
+                <div class="payment-row">
+                    <span>Total Room Nights:</span>
+                    <span>5</span>
+                </div>
+                <div class="payment-row">
+                    <span>Gross Amount:</span>
+                    <span>5,412.80</span>
+                </div>
+                <div class="payment-row">
+                    <span>Commission:</span>
+                    <span>-1,082.56</span>
+                </div>
+                <div class="payment-row">
+                    <span>Tax on Commission:</span>
+                    <span>-194.86</span>
+                </div>
+                <div class="payment-row payment-total">
+                    <span><strong>Net Amount Transferred:</strong></span>
+                    <span><strong>4,135.38</strong></span>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Booking Details</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <thead>
+                    <tr style="background-color: #f4f4f4;">
+                        <th style="padding: 10px; text-align: left; border: 1px solid #dddddd;">Booking ID</th>
+                        <th style="padding: 10px; text-align: left; border: 1px solid #dddddd;">Dates</th>
+                        <th style="padding: 10px; text-align: right; border: 1px solid #dddddd;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #dddddd;">MTBK25000000281</td>
+                        <td style="padding: 10px; border: 1px solid #dddddd;">29-30 Jul 2025</td>
+                        <td style="padding: 10px; border: 1px solid #dddddd; text-align: right;">1,306.94</td>
+                    </tr>
+                    <tr style="background-color: #fafafa;">
+                        <td style="padding: 10px; border: 1px solid #dddddd;">MTBK25000000312</td>
+                        <td style="padding: 10px; border: 1px solid #dddddd;">01-03 Aug 2025</td>
+                        <td style="padding: 10px; border: 1px solid #dddddd; text-align: right;">1,512.20</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #dddddd;">MTBK25000000345</td>
+                        <td style="padding: 10px; border: 1px solid #dddddd;">04-05 Aug 2025</td>
+                        <td style="padding: 10px; border: 1px solid #dddddd; text-align: right;">1,316.24</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>The payment should reflect in your bank account within 1-2 business days.</p>
+            
+            <p>For any queries regarding this payment, please contact our accounts team at <a href="mailto:accounts@mytravaly.com" style="color: #0066cc;">accounts@mytravaly.com</a> or call +91 80 1234 5680.</p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated payment confirmation from MyTravaly</p>
+            <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

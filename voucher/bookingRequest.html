@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Request - MyTravaly</title>
+    <style>
+      /* Base Styles */
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333333;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0;
+        background-color: #f7f7f7;
+      }
+
+      /* Email Container */
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        margin: 20px auto;
+      }
+
+      /* Header */
+      .header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .header-title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+        font-weight: 600;
+        font-size: 24px;
+        pointer-events: none;
+      }
+
+      /* Hotel Header */
+      .hotel-header {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-bottom: 1px solid #eeeeee;
+      }
+
+      .hotel-name-container {
+        flex-grow: 1;
+        min-width: 0; /* Allows text wrapping */
+        padding-right: 20px;
+      }
+
+      .hotel-name {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0;
+        word-wrap: break-word;
+      }
+
+      .hotel-image-container {
+        flex-shrink: 0;
+        width: 200px;
+        height: 120px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .hotel-image {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+      }
+
+      /* Content */
+      .content {
+        padding: 25px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0066cc;
+        margin: 25px 0 15px 0;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 8px;
+      }
+
+      /* Booking Details */
+      .details-grid {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .price-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: #555555;
+      }
+
+      .detail-value {
+        font-weight: 500;
+      }
+
+      .price-value {
+        text-align: right;
+        font-weight: 500;
+      }
+
+      .total-row {
+        border-top: 1px solid #dddddd;
+        padding-top: 8px;
+        margin-top: 8px;
+        font-weight: 600;
+      }
+
+      /* Room Details */
+      .room-card {
+        background: #f9f9f9;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 15px 0;
+        border-left: 4px solid #0066cc;
+      }
+
+      /* Action Buttons */
+      .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 30px 0;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .confirm {
+        background: #4caf50;
+        color: white;
+      }
+
+      .confirm:hover {
+        background: #3e8e41;
+      }
+
+      .reject {
+        background: #f44336;
+        color: white;
+      }
+
+      .reject:hover {
+        background: #d32f2f;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #777777;
+        border-top: 1px solid #eeeeee;
+        background-color: #fafafa;
+      }
+
+      /* Responsive */
+      @media only screen and (max-width: 600px) {
+        .hotel-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hotel-name-container {
+          padding-right: 0;
+          padding-bottom: 15px;
+          width: 100%;
+        }
+
+        .hotel-image-container {
+          width: 100%;
+          height: 200px;
+        }
+
+        .details-grid {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <img
+          src="https://mytravaly.com/logo.png"
+          alt="MyTravaly Logo"
+          class="logo"
+        />
+        <h2 class="header-title">New Booking Request</h2>
+      </div>
+
+      <div class="hotel-header">
+        <div class="hotel-name-container">
+          <h3 class="hotel-name">
+            Anupam International DEMO - A Luxury Boutique Hotel
+          </h3>
+        </div>
+        <div class="hotel-image-container">
+          <img
+            src="https://dwq3yv87q1b43.cloudfront.net/private/booking-engine/settings/images/logo/17486118935032-283183592.jpeg"
+            alt="Anupam International DEMO"
+            class="hotel-image"
+            width="100%"
+          />
+        </div>
+      </div>
+
+      <div class="content">
+        <p style="color: #777; margin-top: 5px">
+          MyTravaly has received a request for booking at your hotel as per the
+          details below. The primary guest Ankit, will be carrying a copy of
+          this e-voucher.
+        </p>
+        <p style="color: #777; margin-top: 5px">
+          Kindly consider this e-voucher for booking confirmation with the
+          following inclusions and services.
+        </p>
+
+        <h4 class="section-title">Booking Information</h4>
+        <div class="details-grid">
+          <div class="detail-label">Booking Reference:</div>
+          <div class="detail-value">MTBK25000000281</div>
+
+          <div class="detail-label">Booking Date:</div>
+          <div class="detail-value">29-07-2025 05:32 PM</div>
+
+          <div class="detail-label">Payment Method:</div>
+          <div class="detail-value">Wallet (Wallet Name) - ₹1.68</div>
+        </div>
+
+        <h4 class="section-title">Guest Details</h4>
+        <div class="details-grid">
+          <div class="detail-label">Guest Name:</div>
+          <div class="detail-value">Test Demo</div>
+
+          <div class="detail-label">Contact:</div>
+          <div class="detail-value">+918888899999 | test@gm.com</div>
+
+          <div class="detail-label">Stay Duration:</div>
+          <div class="detail-value">
+            29-07-2025 (12:00 PM) to 30-07-2025 (12:00 PM) - 1 Night
+          </div>
+        </div>
+
+        <h4 class="section-title">Room Details</h4>
+        <div class="room-card">
+          <div style="font-weight: 600; margin-bottom: 8px">Deluxe Delight</div>
+          <div class="details-grid">
+            <div class="detail-label">Meal Plan:</div>
+            <div class="detail-value">Only Room</div>
+
+            <div class="detail-label">Occupancy:</div>
+            <div class="detail-value">2 Adults, 0 Children</div>
+          </div>
+        </div>
+
+        <h4 class="section-title">Price Breakdown</h4>
+        <div style="margin-bottom: 20px">
+          <p style="font-weight: 600; margin-bottom: 10px">
+            Payment Breakup
+          </p>
+
+          <div class="price-grid">
+            <div class="detail-label">Hotel Price</div>
+            <div class="price-value">1600</div>
+
+            <div class="detail-label">1 Room x 1 Night</div>
+            <div class="price-value">1600</div>
+
+            <div class="detail-label">Extra Adult / Child Charges</div>
+            <div class="price-value">0</div>
+
+            <div class="detail-label">
+              Voluntary Hotel Driven Coupon Discount
+            </div>
+            <div class="price-value">-160.0</div>
+
+            <div class="detail-label">Effective Hotel Sell Price</div>
+            <div class="price-value">1440</div>
+
+            <div class="detail-label">Taxes</div>
+            <div class="price-value">172.8</div>
+
+            <div class="detail-label">Commission</div>
+            <div class="price-value">259.2</div>
+
+            <div class="detail-label total-row">Total Amount</div>
+            <div class="price-value total-row">1612.8</div>
+          </div>
+        </div>
+
+        <h4 class="section-title">Hotel Information</h4>
+        <div class="details-grid">
+          <div class="detail-label">Address:</div>
+          <div class="detail-value">
+            Sibsagar dolmukh chariali, Sibsagar, Assam, India - 785640
+          </div>
+
+          <div class="detail-label">Contact:</div>
+          <div class="detail-value">+919876543214 | anupam@mytravaly.in</div>
+
+          <div class="detail-label">Tax IDs:</div>
+          <div class="detail-value">
+            ACN: 06AAHUP4531F1ZM<br />
+            TAX: 06AAHCU4531F1ZM
+          </div>
+        </div>
+
+        <h4 class="section-title">Cancellation Policy</h4>
+        <ul style="margin-top: 0; padding-left: 20px">
+          <li>
+            20% will be charged of the booking amount, if cancelled before hour
+            of check-in date.
+          </li>
+          <li>
+            % will be charged, if cancelled within hour of check-in date or post
+            check-in date.
+          </li>
+        </ul>
+
+        <div class="action-buttons">
+          <a href="[CONFIRM_LINK]" class="button confirm">Confirm Booking</a>
+          <a href="[REJECT_LINK]" class="button reject">Reject Booking</a>
+        </div>
+
+        <p style="text-align: center; font-size: 14px">
+          Please respond within 24 hours to avoid automatic cancellation.
+        </p>
+      </div>
+
+      <div class="footer">
+        <p>This is an automated message from MyTravaly Booking System</p>
+        <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

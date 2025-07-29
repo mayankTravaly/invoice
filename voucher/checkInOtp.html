@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Confirmation OTP - MyTravaly</title>
+    <style>
+      /* Base Styles */
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333333;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
+        background-color: #f7f7f7;
+      }
+
+      /* Email Container */
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        margin: 20px auto;
+      }
+
+      /* Header */
+      .header {
+        padding: 25px;
+        text-align: center;
+        background-color: #0066cc;
+        color: white;
+      }
+
+      .logo {
+        height: 40px;
+        margin-bottom: 15px;
+      }
+
+      .confirmation-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+
+      .confirmation-number {
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 8px 15px;
+        border-radius: 20px;
+        display: inline-block;
+        margin: 10px 0;
+      }
+
+      /* Content */
+      .content {
+        padding: 25px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0066cc;
+        margin: 25px 0 15px 0;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 8px;
+      }
+
+      /* Booking Details */
+      .details-grid {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: #555555;
+        font-size: 14px;
+      }
+
+      .detail-value {
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      /* OTP Box */
+      .otp-container {
+        text-align: center;
+        margin: 30px 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        border: 1px dashed #cccccc;
+      }
+
+      .otp-code {
+        font-size: 28px;
+        letter-spacing: 5px;
+        font-weight: 700;
+        color: #0066cc;
+        margin: 15px 0;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        display: inline-block;
+      }
+
+      .otp-note {
+        font-size: 13px;
+        color: #777777;
+        margin-top: 15px;
+      }
+
+      /* Hotel Info */
+      .hotel-info {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 6px;
+      }
+
+      .hotel-name {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      /* Action Button */
+      .action-button {
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 30px auto;
+        padding: 12px;
+        text-align: center;
+        background-color: #0066cc;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #777777;
+        border-top: 1px solid #eeeeee;
+        background-color: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <img
+          src="https://mytravaly.com/logo.png"
+          alt="MyTravaly Logo"
+          class="logo"
+        />
+        <h1 class="confirmation-title">Booking Confirmed!</h1>
+        <div class="confirmation-number">Booking ID: MTBK25000000281</div>
+        <p>Thank you for booking with MyTravaly</p>
+      </div>
+
+      <div class="content">
+        <p>Dear <strong>Test Demo</strong>,</p>
+        <p>
+          Your booking at <strong>Anupam International DEMO</strong> has been
+          successfully confirmed. Below are your booking details:
+        </p>
+
+        <h3 class="section-title">Booking Summary</h3>
+        <div class="details-grid">
+          <div class="detail-label">Check-in:</div>
+          <div class="detail-value">29 July 2025 (12:00 PM)</div>
+
+          <div class="detail-label">Check-out:</div>
+          <div class="detail-value">30 July 2025 (12:00 PM)</div>
+
+          <div class="detail-label">Room Type:</div>
+          <div class="detail-value">Deluxe Delight (1 Room)</div>
+
+          <div class="detail-label">Guests:</div>
+          <div class="detail-value">2 Adults</div>
+        </div>
+
+        <div class="hotel-info">
+          <div class="hotel-name">Anupam International DEMO</div>
+          <p>Sibsagar dolmukh chariali, Sibsagar, Assam - 785640</p>
+          <p>Phone: +919876543214</p>
+        </div>
+
+        <h3 class="section-title">Your OTP for Check-in</h3>
+        <div class="otp-container">
+          <p>Please present this OTP at the hotel reception during check-in:</p>
+          <div class="otp-code">7A9B3C</div>
+          <p class="otp-note">This OTP is valid until 30 July 2025, 12:00 PM</p>
+        </div>
+
+        <a href="https://mytravaly.com/my-bookings" class="action-button"
+          >View Your Booking</a
+        >
+
+        <h3 class="section-title">Important Information</h3>
+        <ul style="padding-left: 20px">
+          <li>Please carry a valid government ID proof for check-in</li>
+          <li>Early check-in/late check-out subject to availability</li>
+          <li>
+            Cancellation policy: 20% fee if cancelled before 24 hours of
+            check-in
+          </li>
+        </ul>
+
+        <p style="margin-top: 30px">
+          Need help? Contact our customer support at
+          <a href="mailto:support@mytravaly.com">support@mytravaly.com</a> or
+          call +91 80 1234 5678
+        </p>
+      </div>
+
+      <div class="footer">
+        <p>This is an automated message. Please do not reply to this email.</p>
+        <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

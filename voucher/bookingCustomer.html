@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - MyTravaly</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        
+        /* Email Container */
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        
+        /* Header */
+        .header {
+            padding: 25px;
+            text-align: center;
+            background-color: #0066cc;
+            color: white;
+        }
+        
+        .logo {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .confirmation-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        .confirmation-number {
+            font-size: 18px;
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        /* Hotel Header */
+        .hotel-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eeeeee;
+        }
+        
+        .hotel-name-container {
+            flex-grow: 1;
+            min-width: 0;
+        }
+        
+        .hotel-name {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            color: #0066cc;
+        }
+        
+        .hotel-address {
+            color: #666666;
+            margin: 5px 0;
+        }
+        
+        .hotel-contact {
+            margin: 5px 0;
+        }
+        
+        .hotel-image-container {
+            flex-shrink: 0;
+            width: 200px;
+            height: 120px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .hotel-image {
+            width: 100%;
+            height: 100%;
+            /* object-fit: cover; */
+        }
+        
+        /* Content */
+        .content {
+            padding: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0066cc;
+            margin: 25px 0 15px 0;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 8px;
+        }
+        
+        /* Booking Details */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #555555;
+        }
+        
+        .detail-value {
+            font-weight: 500;
+        }
+        
+        /* Room Details */
+        .room-card {
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .room-type {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        /* Price Breakdown */
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+        
+        .price-value {
+            text-align: right;
+            font-weight: 500;
+        }
+        
+        .total-row {
+            border-top: 1px solid #dddddd;
+            padding-top: 8px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+        
+        /* Important Notes */
+        .important-notes {
+            background-color: #fff8e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .notes-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ff9800;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777777;
+            border-top: 1px solid #eeeeee;
+            background-color: #fafafa;
+        }
+        
+        /* Responsive */
+        @media only screen and (max-width: 600px) {
+            .hotel-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hotel-image-container {
+                width: 100%;
+                height: 200px;
+                margin-top: 15px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://mytravaly.com/logo.png" alt="MyTravaly Logo" class="logo">
+            <h1 class="confirmation-title">Booking Confirmed</h1>
+            <div class="confirmation-number">Confirmation Id: MTBK25000000281</div>
+            <p>Thank you for choosing MyTravaly. Your booking is confirmed!</p>
+        </div>
+        
+        <div class="hotel-header">
+            <div class="hotel-name-container">
+                <h2 class="hotel-name">Anupam International DEMO - A Luxury Boutique Hotel</h2>
+                <p class="hotel-address">Sibsagar dolmukh chariali, Sibsagar, Assam, India - 785640</p>
+                <p class="hotel-contact">Phone: +919876543214 | Email: anupam@mytravaly.in</p>
+            </div>
+            <div class="hotel-image-container">
+                <img src="https://dwq3yv87q1b43.cloudfront.net/private/booking-engine/settings/images/logo/17486118935032-283183592.jpeg" alt="Anupam International DEMO" class="hotel-image" width="100%">
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="important-notes">
+                <div class="notes-title">Important Information</div>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li>Please present this voucher and a valid photo ID at check-in</li>
+                    <li>Check-in time: 12:00 PM | Check-out time: 12:00 PM</li>
+                    <li>Early check-in/late check-out subject to availability</li>
+                </ul>
+            </div>
+            
+            <h3 class="section-title">Guest Information</h3>
+            <div class="details-grid">
+                <div class="detail-label">Guest Name:</div>
+                <div class="detail-value">Test Demo</div>
+                
+                <div class="detail-label">Contact:</div>
+                <div class="detail-value">+918888899999 | test@gm.com</div>
+                
+                <div class="detail-label">Booking Date:</div>
+                <div class="detail-value">29-07-2025 05:32 PM</div>
+                
+                <div class="detail-label">Stay Duration:</div>
+                <div class="detail-value">29-07-2025 to 30-07-2025 (1 Night)</div>
+            </div>
+            
+            <h3 class="section-title">Room Details</h3>
+            <div class="room-card">
+                <div class="room-type">Deluxe Delight</div>
+                <div class="details-grid">
+                    <div class="detail-label">Meal Plan:</div>
+                    <div class="detail-value">Only Room</div>
+                    
+                    <div class="detail-label">Occupancy:</div>
+                    <div class="detail-value">2 Adults, 0 Children</div>
+                    
+                    <div class="detail-label">Room Amenities:</div>
+                    <div class="detail-value">AC, TV, Free WiFi, Additional Bathroom, Bed linen</div>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Price Summary</h3>
+            <div style="margin-bottom: 20px;">
+                <div class="price-grid">
+                    <div class="detail-label">Room Charges (1 Night)</div>
+                    <div class="price-value">1600.00</div>
+                    
+                    <div class="detail-label">Discount</div>
+                    <div class="price-value">-160.00</div>
+                    
+                    <div class="detail-label">Taxes & Fees</div>
+                    <div class="price-value">172.80</div>
+                    
+                    <div class="detail-label total-row">Total Paid</div>
+                    <div class="price-value total-row">1612.80</div>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Cancellation Policy</h3>
+            <ul style="margin-top: 0; padding-left: 20px;">
+                <li>20% will be charged of the booking amount if cancelled before 24 hours of check-in date</li>
+                <li>100% will be charged if cancelled within 24 hours of check-in date or no-show</li>
+            </ul>
+            
+            <h3 class="section-title">Directions to Property</h3>
+            <p>Located in the heart of Sibsagar, the hotel is easily accessible from the main road. Nearest landmark is the Dolmukh Temple, approximately 200 meters away.</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://maps.google.com/?q=Sibsagar+dolmukh+chariali" style="display: inline-block; padding: 12px 25px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">View on Map</a>
+            </div>
+            
+            <div class="important-notes">
+                <div class="notes-title">Need Help?</div>
+                <p>Contact MyTravaly Customer Support:</p>
+                <p>Phone: +91 80 1234 5678 (24/7)<br>
+                Email: support@mytravaly.com</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated message from MyTravaly Booking System</p>
+            <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

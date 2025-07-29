@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Experience - MyTravaly</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        
+        /* Email Container */
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        
+        /* Header */
+        .header {
+            padding: 25px;
+            text-align: center;
+            background-color: #0066cc;
+            color: white;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .feedback-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        .booking-number {
+            font-size: 16px;
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        /* Content */
+        .content {
+            padding: 25px;
+        }
+        
+        .intro-text {
+            margin-bottom: 25px;
+        }
+        
+        .feedback-form {
+            margin: 25px 0;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+        }
+        
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .rating-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+        
+        .rating-option {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .text-answer {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 30px auto;
+            padding: 12px;
+            text-align: center;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777777;
+            border-top: 1px solid #eeeeee;
+            background-color: #fafafa;
+        }
+        
+        .thank-you-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f7ff;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://mytravaly.com/logo.png" alt="MyTravaly Logo" class="logo">
+            <h1 class="feedback-title">How Was Your Stay?</h1>
+            <div class="booking-number">Booking ID: MTBK25000000281</div>
+            <p>We value your feedback</p>
+        </div>
+        
+        <div class="content">
+            <p class="intro-text">Dear <strong>Test Demo</strong>,</p>
+            <p class="intro-text">Thank you for staying at <strong>Anupam International DEMO</strong>. We hope you had a pleasant experience. Please take a moment to share your feedback - it helps us improve our services.</p>
+            
+            <div class="feedback-form">
+                <form id="feedbackForm">
+                    <input type="hidden" name="booking_id" value="MTBK25000000281">
+                    
+                    <div class="question">
+                        <span class="question-text">1. How would you rate your overall experience?</span>
+                        <div class="rating-options">
+                            <div class="rating-option">
+                                <input type="radio" id="overall-1" name="overall_rating" value="1" required>
+                                <label for="overall-1">1 (Poor)</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="overall-2" name="overall_rating" value="2">
+                                <label for="overall-2">2</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="overall-3" name="overall_rating" value="3">
+                                <label for="overall-3">3</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="overall-4" name="overall_rating" value="4">
+                                <label for="overall-4">4</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="overall-5" name="overall_rating" value="5">
+                                <label for="overall-5">5 (Excellent)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <span class="question-text">2. How would you rate the cleanliness of your room?</span>
+                        <div class="rating-options">
+                            <div class="rating-option">
+                                <input type="radio" id="cleanliness-1" name="cleanliness_rating" value="1" required>
+                                <label for="cleanliness-1">1 (Poor)</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="cleanliness-2" name="cleanliness_rating" value="2">
+                                <label for="cleanliness-2">2</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="cleanliness-3" name="cleanliness_rating" value="3">
+                                <label for="cleanliness-3">3</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="cleanliness-4" name="cleanliness_rating" value="4">
+                                <label for="cleanliness-4">4</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="cleanliness-5" name="cleanliness_rating" value="5">
+                                <label for="cleanliness-5">5 (Excellent)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <span class="question-text">3. How satisfied were you with the staff service?</span>
+                        <div class="rating-options">
+                            <div class="rating-option">
+                                <input type="radio" id="staff-1" name="staff_rating" value="1" required>
+                                <label for="staff-1">1 (Poor)</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="staff-2" name="staff_rating" value="2">
+                                <label for="staff-2">2</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="staff-3" name="staff_rating" value="3">
+                                <label for="staff-3">3</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="staff-4" name="staff_rating" value="4">
+                                <label for="staff-4">4</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="staff-5" name="staff_rating" value="5">
+                                <label for="staff-5">5 (Excellent)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <span class="question-text">4. How comfortable was your room?</span>
+                        <div class="rating-options">
+                            <div class="rating-option">
+                                <input type="radio" id="comfort-1" name="comfort_rating" value="1" required>
+                                <label for="comfort-1">1 (Poor)</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="comfort-2" name="comfort_rating" value="2">
+                                <label for="comfort-2">2</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="comfort-3" name="comfort_rating" value="3">
+                                <label for="comfort-3">3</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="comfort-4" name="comfort_rating" value="4">
+                                <label for="comfort-4">4</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="comfort-5" name="comfort_rating" value="5">
+                                <label for="comfort-5">5 (Excellent)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <span class="question-text">5. How would you rate the value for money?</span>
+                        <div class="rating-options">
+                            <div class="rating-option">
+                                <input type="radio" id="value-1" name="value_rating" value="1" required>
+                                <label for="value-1">1 (Poor)</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="value-2" name="value_rating" value="2">
+                                <label for="value-2">2</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="value-3" name="value_rating" value="3">
+                                <label for="value-3">3</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="value-4" name="value_rating" value="4">
+                                <label for="value-4">4</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" id="value-5" name="value_rating" value="5">
+                                <label for="value-5">5 (Excellent)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <span class="question-text">6. Would you recommend this property to others?</span>
+                        <div>
+                            <input type="radio" id="recommend-yes" name="recommend" value="yes" required>
+                            <label for="recommend-yes">Yes</label>
+                            <input type="radio" id="recommend-no" name="recommend" value="no" style="margin-left: 15px;">
+                            <label for="recommend-no">No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <span class="question-text">7. Any additional comments or suggestions?</span>
+                        <textarea class="text-answer" name="comments" rows="3" placeholder="Your feedback helps us improve..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+                
+                <div id="thankYouMessage" class="thank-you-message">
+                    <h3>Thank You!</h3>
+                    <p>We appreciate your feedback and will use it to improve our services.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>This feedback request is for your recent stay ending on 30 July 2025</p>
+            <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const feedbackData = {};
+            
+            // Convert FormData to object
+            formData.forEach((value, key) => {
+                feedbackData[key] = value;
+            });
+            
+            // Log the answers to console
+            console.log('Feedback Submission:', feedbackData);
+            
+            // Show thank you message
+            document.getElementById('thankYouMessage').style.display = 'block';
+            
+            // Optional: You could add AJAX here to send the data to your server
+            // For example:
+            /*
+            fetch('https://your-api-endpoint.com/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(feedbackData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+            */
+            
+            // Reset form after submission (optional)
+            event.target.reset();
+        });
+    </script>
+</body>
+</html>

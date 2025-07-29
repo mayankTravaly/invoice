@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Processing - MyTravaly</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        
+        /* Email Container */
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .logo {
+            height: 40px;
+        }
+        
+        .header-title {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: 0 auto;
+            font-weight: 600;
+            font-size: 24px;
+            pointer-events: none;
+        }
+        
+        /* Status Banner */
+        .status-banner {
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .pending {
+            background-color: #FFC107;
+            color: #333;
+        }
+        
+        /* Content */
+        .content {
+            padding: 25px;
+        }
+        
+        .greeting {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        /* Transaction Details */
+        .details {
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+        
+        .detail-label {
+            width: 120px;
+            font-weight: 600;
+            color: #555555;
+            font-size: 14px;
+        }
+        
+        .detail-value {
+            flex: 1;
+            font-weight: 500;
+        }
+        
+        .status-pending {
+            color: #FF9800;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777777;
+            border-top: 1px solid #eeeeee;
+            background-color: #fafafa;
+        }
+        
+        .footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media only screen and (max-width: 480px) {
+            .content {
+                padding: 15px;
+            }
+            .detail-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .detail-label {
+                margin-bottom: 4px;
+                width: 100%;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-title {
+                position: static;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://mytravaly.com/logo.png" alt="MyTravaly Logo" class="logo">
+            <h2 class="header-title">Payment Processing</h2>
+        </div>
+        
+        <div class="status-banner pending">
+            <h3>Your payment is being processed</h3>
+        </div>
+        
+        <div class="content">
+            <p class="greeting">Dear Ankit Kumar,</p>
+            
+            <p>We've received your payment request and it's currently being processed.</p>
+            
+            <div class="details">
+                <div class="detail-row">
+                    <div class="detail-label">Order ID:</div>
+                    <div class="detail-value">MTCSF_e9a6e14a-35c8c48e</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Token ID:</div>
+                    <div class="detail-value">MTPA_27ca9b58-3d7cee5a-55ba4f72-e87e662a-c77cec9ce</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Amount:</div>
+                    <div class="detail-value">INR 2000</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Status:</div>
+                    <div class="detail-value">
+                        <span class="status-pending">Pending</span>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Date:</div>
+                    <div class="detail-value">29 July 2025</div>
+                </div>
+            </div>
+            
+            <p>This may take a few minutes. We'll notify you by email once the payment is complete.</p>
+            
+            <p>Your booking will be confirmed only after successful payment.</p>
+            
+            <p>If you don't receive a confirmation within 30 minutes, please check your spam folder or contact our support team.</p>
+        </div>
+        
+        <div class="footer">
+            <p>MyTravaly Customer Support<br>
+            <a href="mailto:support@mytravaly.com">support@mytravaly.com</a> | +91 80 1234 5678</p>
+            
+            <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.<br>
+            171, Panduranga Nagar, Bengaluru, Karnataka 560076, India</p>
+            
+            <p>
+                <a href="https://mytravaly.com/privacy">Privacy Policy</a> | 
+                <a href="https://mytravaly.com/terms">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

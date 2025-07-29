@@ -1,474 +1,476 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Booking Voucher - Hotelier Copy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-      rel="stylesheet"
-    />
-
+    <title>Booking Confirmation - MyTravaly Partner</title>
     <style>
+      /* Base Styles */
       body {
-        font-family: "Be Vietnam Pro", serif;
-        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333333;
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #f7f7f7;
+      }
+
+      /* Email Container */
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        margin: 10px auto;
+        border: 1px solid #dddddd;
+      }
+
+      /* Header */
+      .header {
         padding: 20px;
-        background-color: #f9f9f9;
+        text-align: center;
+        background-color: #0066cc;
+        color: white;
+        position: relative;
       }
 
-      .container {
-        width: 80%;
-        margin: auto;
-        background-color: #fff;
-        border: 1px solid gray;
+      .header-content {
+        max-width: 500px;
+        margin: 0 auto;
       }
 
-      .individual-padding {
-        padding: 0 20px;
+      .logo {
+        height: 40px;
+        margin-bottom: 10px;
       }
 
-      .company-name {
-        line-height: 5%;
+      .small-logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 30px;
+      }
+
+      .confirmation-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 8px 0;
+      }
+
+      .confirmation-number {
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 6px 12px;
+        border-radius: 20px;
+        display: inline-block;
+        margin: 8px 0;
+      }
+
+      /* Voucher Section */
+      .voucher-title {
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: 700;
+        padding: 12px;
+        background-color: #f4f4f4;
+        border-bottom: 1px solid #dddddd;
+        margin: 0;
       }
 
       .header-info {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid gray;
+        padding: 15px;
+        border-bottom: 1px solid #dddddd;
       }
 
-      .header-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 20px;
-        width: 100%;
+      .company-details {
+        flex-grow: 1;
       }
 
-      .company-details h2 {
-        margin: 0;
-        font-size: 1.2em;
-        margin-bottom: 8px;
-      }
-
-      .company-details p {
-        margin: 0;
-        font-size: 0.9em;
+      .company-name h3 {
+        margin: 5px 0;
+        font-size: 1.1em;
       }
 
       .company-address {
-        font-size: 12px;
+        font-size: 11px;
+        color: #555555;
+        line-height: 1.4;
       }
 
-      .voucher-title {
-        text-align: center;
-        font-size: 1.5em;
-        font-weight: 700;
-        padding: 10px;
-        background-color: #f4f4f4;
-        border-bottom: 1px solid gray;
+      /* Content */
+      .content {
+        padding: 0;
       }
 
       .content-wrapper {
         display: flex;
+        padding: 15px;
+        border-bottom: 1px solid #eeeeee;
       }
 
-      .content-left {
+      .content-left,
+      .content-right {
         flex: 1;
-        padding: 20px;
-        border-right: 1px solid gray;
+        padding: 0 8px;
       }
 
       .info-row {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        margin-bottom: 8px;
       }
 
-      .info-row strong {
-        flex: 1;
-        text-align: left;
-        font-weight: 500;
-        color: #555353;
-        font-size: 12px;
-      }
-
-      .colon {
-        flex: 0;
-        margin: 0 5px;
-        text-align: center;
-      }
-
-      .info-detail {
-        flex: 1;
-        text-align: left;
-        font-weight: 700;
-        font-size: 12px;
-      }
-
-      .content-right {
-        flex: 1;
-        padding: 20px;
-      }
-
-      .bill-to-header {
-        border-top: 1px solid gray;
-        border-bottom: 1px solid gray;
-        padding-left: 20px;
-        color: #555353;
-        font-size: 12px;
-      }
-
-      .biller-address {
-        padding: 0 20px;
-        border-bottom: 1px solid gray;
-        font-size: 12px;
-      }
-
-      .biller-address p {
-        line-height: 8px;
-      }
-
-      .subject {
-        font-size: 12px;
-      }
-
-      .gray-text {
-        color: #555353;
+      .detail-label {
         font-weight: 600;
-      }
-
-      .small-font {
+        color: #555555;
         font-size: 12px;
+        flex: 1;
       }
 
-      .total-balance {
-        font-weight: 700;
+      .detail-value {
+        font-weight: 600;
+        font-size: 12px;
+        flex: 1;
       }
 
+      /* Table Styles */
       .table-container {
+        margin: 15px;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
         font-size: 12px;
-        text-align: left;
       }
 
-      th, td {
-        border: 1px solid gray;
-        padding: 8px 10px;
+      th,
+      td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
       }
 
       th {
         background-color: #f4f4f4;
-        font-weight: bold;
-        text-align: center;
-      }
-
-      tbody tr:nth-child(odd) {
-        background-color: #fafafa;
-      }
-
-      .center {
-        text-align: center;
+        font-weight: 600;
       }
 
       .right {
         text-align: right;
       }
 
-      .total-in-words p {
-        line-height: 10px;
+      .total-row {
+        font-weight: 600;
+        background-color: #f9f9f9;
       }
 
+      /* Total Section */
       .total-section {
         display: flex;
-        justify-content: space-between;
-        border-top: 1px solid gray;
-        margin-top: 20px;
-      }
-
-      .total-text {
-        flex: 1; 
-        font-size: 0.9em;
-      }
-
-      .total-text p {
-        margin: 5px 0;
-      }
-
-      .total-numbers {
-        flex: 1;
-        text-align: right; 
-        font-size: 0.9em;
-      }
-
-      .total-numbers p {
-        margin: 5px 0;
-      }
-
-      .signature {
-        margin-top: 20px;
-        text-align: right;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .total-section-pointers {
-        color: black;
-        font-weight: 700;
+        padding: 15px;
+        border-top: 1px solid #eeeeee;
       }
 
       .total-section-left {
         flex: 2;
+        padding-right: 15px;
       }
 
       .total-section-right {
         flex: 1;
-        border-bottom: 1px solid gray;
-        border-left: 1px solid gray;
+        border-left: 1px solid #eeeeee;
+        padding-left: 15px;
       }
 
-      .footer-note {
-        font-size: 10px;
+      .amount-in-words {
+        font-style: italic;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .notes {
+        font-size: 11px;
+        color: #555555;
+        margin-top: 12px;
+      }
+
+      /* Hotel Information */
+      .hotel-info {
+        padding: 15px;
+        border-bottom: 1px solid #eeeeee;
+      }
+
+      .hotel-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0066cc;
+        margin-bottom: 5px;
+      }
+
+      .hotel-contact {
+        font-size: 13px;
+        color: #555555;
+      }
+
+      /* Important Notes */
+      .important-notes {
+        background-color: #f0f7ff;
+        border-left: 4px solid #0066cc;
+        padding: 12px;
+        margin: 15px;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .notes-title {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #0066cc;
+      }
+
+      /* Footer */
+      .footer {
         text-align: center;
-        padding: 10px;
-        color: #555;
+        padding: 15px;
+        font-size: 11px;
+        color: #777777;
+        border-top: 1px solid #eeeeee;
+        background-color: #fafafa;
       }
 
-      @media (max-width: 768px) {
-        .header-info {
-          flex-direction: column;
-          text-align: center;
-        }
+      .from-label {
+        font-weight: 600;
+        color: #555555;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
 
+      /* Responsive */
+      @media only screen and (max-width: 600px) {
         .content-wrapper {
           flex-direction: column;
         }
 
         .content-left,
         .content-right {
-          border: none;
-        }
-
-        .table-container {
-          margin-top: 10px;
-        }
-
-        table {
-          font-size: 0.8em;
-        }
-
-        th,
-        td {
-          padding: 1px;
+          padding: 8px 0;
         }
 
         .total-section {
           flex-direction: column;
-          text-align: center;
         }
 
-        .total-numbers {
-          text-align: center;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .container {
-          width: 100%;
-          padding: 10px;
-        }
-
-        .header-info {
-          padding: 10px;
-        }
-
-        table th,
-        table td {
-          font-size: 0.7em;
-          padding: 1px;
-        }
-
-        .total-section {
-          gap: 10px;
-        }
-
-        .total-section-left p,
-        .total-numbers p {
-          font-size: 0.8em;
+        .total-section-right {
+          border-left: none;
+          border-top: 1px solid #eeeeee;
+          padding-left: 0;
+          padding-top: 15px;
+          margin-top: 15px;
         }
       }
     </style>
   </head>
-
   <body>
-    <div class="container">
-      <div class="voucher-title">HOTEL BOOKING VOUCHER</div>
-      
-      <div class="header-info">
-        <div class="header-wrapper">
+    <div class="email-container">
+      <div class="header">
+        <!-- <img src="https://mytravaly.com/logo.png" alt="MyTravaly" class="small-logo"> -->
+        <div class="header-content">
           <img
-            src="https://dwq3yv87q1b43.cloudfront.net/public/static/logo/logov1.png"
-            height="100px"
-            alt="Company Logo"
+            src="https://mytravaly.com/logo.png"
+            alt="MyTravaly Logo"
             class="logo"
           />
-          <div class="company-details">
-            <div class="company-name">
-              <h3>MyTravaly Worldwide Travel Technology</h3>
-              <h3>Private Limited</h3>
-            </div>
+          <h1 class="confirmation-title">Booking Confirmed</h1>
+          <div class="confirmation-number">Booking ID: MTBK25000000281</div>
+          <p>
+            A new booking has been confirmed for your property.
+            <br />
+            Please find below the complete booking details and financial summary
+            for your reference.
+          </p>
+        </div>
+      </div>
 
-            <div class="company-address">
-              <p>Company ID: U63090KA2019PTC123414</p>
-              <p>171, Panduranga Nagar, 1st Cross, off B.G Road</p>
-              <p>Bengaluru Karnataka 560076</p>
-              <p>India</p>
-              <p>GSTIN: 29AAMCM6009N1ZU</p>
-            </div>
+      <div class="voucher-title">HOTEL BOOKING VOUCHER</div>
+
+      <div class="header-info">
+        <div class="company-details">
+          <p class="from-label">From:</p>
+          <div class="company-name">
+            <h3>MyTravaly Worldwide Travel Technology Private Limited</h3>
+          </div>
+          <div class="company-address">
+            <p>Company ID: U63090KA2019PTC123414</p>
+            <p>
+              171, Panduranga Nagar, 1st Cross, off B.G Road, Bengaluru
+              Karnataka 560076, India
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="content">
-        <div class="content-wrapper">
-          <div class="content-left">
-            <div class="info-row">
-              <strong>Booking Reference</strong>
-              <span class="info-detail">MTBK25000000277</span>
-            </div>
-            <div class="info-row">
-              <strong>Date of Issue</strong>
-              <span class="info-detail">28-07-2025</span>
-            </div>
-            <div class="info-row">
-              <strong>Guest Name</strong>
-              <span class="info-detail">Ankit Kumar</span>
-            </div>
+      <div class="content-wrapper">
+        <div class="content-left">
+          <div class="info-row">
+            <div class="detail-label">Booking Reference:</div>
+            <div class="detail-value">MTBK25000000281</div>
           </div>
-
-          <div class="content-right">
-            <div class="info-row">
-              <strong>Hotel Name</strong>
-              <span class="info-detail">New Property Name23</span>
-            </div>
-            <div class="info-row">
-              <strong>Check-in Date</strong>
-              <span class="info-detail">29-07-2025</span>
-            </div>
-            <div class="info-row">
-              <strong>Check-out Date</strong>
-              <span class="info-detail">31-07-2025</span>
-            </div>
+          <div class="info-row">
+            <div class="detail-label">Date of Issue:</div>
+            <div class="detail-value">29-07-2025</div>
+          </div>
+          <div class="info-row">
+            <div class="detail-label">Guest Name:</div>
+            <div class="detail-value">Test Demo</div>
           </div>
         </div>
 
-        <div class="invoice-details">
-          <div class="table">
-            <div class="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Particulars</th>
-                    <th>Amount (INR)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Room Tariff (Marked-Up)</td>
-                    <td class="right">2400.00</td>
-                  </tr>
-                  <tr>
-                    <td>Less: Promotional Discount @40%</td>
-                    <td class="right">-792.00</td>
-                  </tr>
-                  <tr>
-                    <td>Net Room Tariff</td>
-                    <td class="right">1608.00</td>
-                  </tr>
-                  <tr>
-                    <td>Add: Hotel GST @12%</td>
-                    <td class="right">192.96</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Gross Hotel Charge</strong></td>
-                    <td class="right"><strong>1800.96</strong></td>
-                  </tr>
-                  <tr>
-                    <td>MyTravaly Commission</td>
-                    <td class="right">-321.60</td>
-                  </tr>
-                  <tr>
-                    <td>GST @18% on Commission</td>
-                    <td class="right">-57.888</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Total Commission incl. GST</strong></td>
-                    <td class="right"><strong>-379.488</strong></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Net Payout to Hotel</strong></td>
-                    <td class="right"><strong>1421.472</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="content-right">
+          <div class="info-row">
+            <div class="detail-label">Hotel Name:</div>
+            <div class="detail-value">Anupam International DEMO</div>
+          </div>
+          <div class="info-row">
+            <div class="detail-label">Check-in Date:</div>
+            <div class="detail-value">29-07-2025 (12:00 PM)</div>
+          </div>
+          <div class="info-row">
+            <div class="detail-label">Check-out Date:</div>
+            <div class="detail-value">30-07-2025 (12:00 PM)</div>
           </div>
         </div>
+      </div>
 
-        <div class="total-section">
-          <div class="total-section-left individual-padding">
-            <div class="total-in-words">
-              <p class="gray-text small-font">Amount in words:</p>
-              <i class="small-font total-balance">
-                One Thousand Four Hundred Twenty-One Rupees and Forty-Seven Paise Only
-              </i>
-            </div>
+      <div class="hotel-info">
+        <h2 class="hotel-name">
+          Anupam International DEMO - A Luxury Boutique Hotel
+        </h2>
+        <p class="hotel-contact">
+          Sibsagar dolmukh chariali, Sibsagar, Assam, India - 785640
+        </p>
+        <p class="hotel-contact">
+          Phone: +919876543214 | Email: anupam@mytravaly.in
+        </p>
+      </div>
 
-            <p class="small-font">
-              <strong>Note:</strong> This amount represents the net payable to your hotel after all deductions. 
-              Please ensure all taxes are properly accounted for in your records.
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Particulars</th>
+              <th class="right">Amount (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Room Tariff (1 Room x 1 Night)</td>
+              <td class="right">1600.00</td>
+            </tr>
+            <tr>
+              <td>Less: Voluntary Hotel Driven Coupon Discount</td>
+              <td class="right">-160.00</td>
+            </tr>
+            <tr>
+              <td>Net Room Tariff</td>
+              <td class="right">1440.00</td>
+            </tr>
+            <tr>
+              <td>Add: Hotel Taxes @12%</td>
+              <td class="right">172.80</td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>Gross Hotel Charge</strong></td>
+              <td class="right"><strong>1612.80</strong></td>
+            </tr>
+
+            <!-- <tr>
+              <td>MyTravaly Commission</td>
+              <td class="right">-259.20</td>
+            </tr> -->
+            
+            <!-- <tr>
+              <td>GST @18% on Commission</td>
+              <td class="right">-46.66</td>
+            </tr> -->
+            
+            <!-- <tr class="total-row">
+              <td><strong>Total Commission incl. GST</strong></td>
+              <td class="right"><strong>-305.86</strong></td>
+            </tr> -->
+            
+            <!-- <tr class="total-row">
+              <td><strong>Net Payout to Hotel</strong></td>
+              <td class="right"><strong>1306.94</strong></td>
+            </tr> -->
+          
+          </tbody>
+        </table>
+      </div>
+
+      <div class="total-section">
+        <div class="total-section-left">
+          <p><strong>Amount in words:</strong></p>
+          <p class="amount-in-words">
+            One Thousand Three Hundred Six Rupees and Ninety-Four Paise Only
+          </p>
+
+          <div class="notes">
+            <p>
+              <strong>Note:</strong> This amount represents the net payable to
+              your hotel after all deductions.
+            </p>
+            <p>
+              Please ensure all taxes are properly accounted for in your
+              records.
             </p>
           </div>
+        </div>
 
-          <div class="total-numbers total-section-right">
-            <div>
-              <div class="total-details individual-padding">
-                <p class="info-row"><strong>Payment Status:</strong> Pending</p>
-                <p class="info-row"><strong>Settlement Date:</strong> [Date]</p>
-                <p class="info-row">
-                  <strong class="total-section-pointers">Payment Method:</strong> Bank Transfer
-                </p>
-              </div>
-              <hr />
-              <div class="signature individual-padding">
-                <p>
-                  <img
-                    src="https://w7.pngwing.com/pngs/402/202/png-transparent-postage-stamps-rubber-stamp-stamp-logo-template-angle-text-thumbnail.png"
-                    alt=""
-                    height="55px"
-                  />
-                </p>
-                <p><strong>Authorized Signature</strong></p>
-              </div>
-            </div>
+        <div class="total-section-right">
+          <div class="info-row">
+            <div class="detail-label">Payment Status:</div>
+            <div class="detail-value">Pending</div>
+          </div>
+          <div class="info-row">
+            <div class="detail-label">Settlement Date:</div>
+            <div class="detail-value">05-08-2025</div>
+          </div>
+          <div class="info-row">
+            <div class="detail-label">Payment Method:</div>
+            <div class="detail-value">Bank Transfer</div>
           </div>
         </div>
-        
-        <div class="footer-note">
-          For any queries regarding this booking or payment, please contact accounts@mytravaly.com
-        </div>
+      </div>
+
+      <div class="important-notes">
+        <div class="notes-title">Next Steps</div>
+        <ul style="margin: 0; padding-left: 20px">
+          <li>Please prepare the Deluxe Delight room for guest arrival</li>
+          <li>Guest will present booking confirmation and ID at check-in</li>
+          <li>Please verify all details match our records</li>
+          <li>Any discrepancies must be reported within 24 hours</li>
+        </ul>
+      </div>
+
+      <div class="important-notes">
+        <div class="notes-title">Cancellation Policy</div>
+        <ul style="margin: 0; padding-left: 20px">
+          <li>20% cancellation fee if cancelled before 24 hours of check-in</li>
+          <li>100% cancellation fee within 24 hours of check-in or no-show</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <p>
+          For any queries regarding this booking or payment, please contact
+          partners@mytravaly.com
+        </p>
+        <p>This is an automated message from MyTravaly Partner System</p>
+        <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.</p>
       </div>
     </div>
   </body>

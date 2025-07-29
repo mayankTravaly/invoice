@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Arrival Notification - MyTravaly</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        
+        /* Email Container */
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        
+        /* Header */
+        .header {
+            padding: 25px;
+            text-align: center;
+            background-color: #0066cc;
+            color: white;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .notification-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        .booking-number {
+            font-size: 16px;
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        /* Content */
+        .content {
+            padding: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0066cc;
+            margin: 25px 0 15px 0;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 8px;
+        }
+        
+        /* Booking Details */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #555555;
+            font-size: 14px;
+        }
+        
+        .detail-value {
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        /* OTP Box */
+        .otp-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f0f7ff;
+            border-radius: 8px;
+            border: 1px dashed #0066cc;
+        }
+        
+        .otp-code {
+            font-size: 28px;
+            letter-spacing: 5px;
+            font-weight: 700;
+            color: #0066cc;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .otp-note {
+            font-size: 13px;
+            color: #777777;
+            margin-top: 15px;
+        }
+        
+        /* Important Notice */
+        .important-notice {
+            background-color: #fff8e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777777;
+            border-top: 1px solid #eeeeee;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://mytravaly.com/logo.png" alt="MyTravaly Logo" class="logo">
+            <h1 class="notification-title">Guest Arrival Notification</h1>
+            <div class="booking-number">Booking ID: MTBK25000000281</div>
+            <p>Guest arriving tomorrow - Please prepare the room</p>
+        </div>
+        
+        <div class="content">
+            <div class="important-notice">
+                <p><strong>ACTION REQUIRED:</strong> Please ensure the room is prepared and ready for guest arrival tomorrow.</p>
+            </div>
+            
+            <h3 class="section-title">Guest Details</h3>
+            <div class="details-grid">
+                <div class="detail-label">Guest Name:</div>
+                <div class="detail-value">Test Demo</div>
+                
+                <div class="detail-label">Check-in Date:</div>
+                <div class="detail-value">29 July 2025 (12:00 PM)</div>
+                
+                <div class="detail-label">Check-out Date:</div>
+                <div class="detail-value">30 July 2025 (12:00 PM)</div>
+                
+                <div class="detail-label">Room Type:</div>
+                <div class="detail-value">Deluxe Delight</div>
+                
+                <div class="detail-label">Occupancy:</div>
+                <div class="detail-value">2 Adults</div>
+            </div>
+            
+            <h3 class="section-title">Check-in OTP</h3>
+            <div class="otp-container">
+                <p>The guest will present this OTP during check-in:</p>
+                <div class="otp-code">7A9B3C</div>
+                <p class="otp-note">Valid until 30 July 2025, 12:00 PM</p>
+            </div>
+            
+            <h3 class="section-title">Special Instructions</h3>
+            <ul style="padding-left: 20px; margin-bottom: 25px;">
+                <li>Please verify the OTP matches our records during check-in</li>
+                <li>Request valid government ID from guest for verification</li>
+                <li>Early check-in/late check-out subject to availability</li>
+            </ul>
+            
+            <p>For any questions, please contact our Partner Support at <a href="mailto:partners@mytravaly.com">partners@mytravaly.com</a> or call +91 80 1234 5679</p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated reminder sent one day prior to guest arrival</p>
+            <p>© 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
