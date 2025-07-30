@@ -161,7 +161,8 @@
         text-align: left;
       }
 
-      th, td {
+      th,
+      td {
         border: 1px solid gray;
         padding: 8px 10px;
       }
@@ -283,16 +284,53 @@
           gap: 10px;
         }
       }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+        font-size: 10px;
+        color: #777;
+        border-top: 1px solid #eee;
+        flex-wrap: wrap;
+      }
+
+      .footer-logo {
+        height: 20px;
+      }
+
+      .footer-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .copyright {
+        font-size: 9px;
+        color: #777;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (max-width: 480px) {
+        .footer {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
       <div class="invoice-title">
-        TAX INVOICE — WEB RESERVATION FEES (MYTRAVALY)<br>
+        TAX INVOICE — WEB RESERVATION FEES (MYTRAVALY)<br />
         MYTRAVALY — TAX INVOICE
       </div>
-      
+
       <div class="header-info">
         <div class="header-wrapper">
           <img
@@ -411,8 +449,8 @@
             </div>
 
             <p class="small-font">
-              <strong>Note:</strong> This invoice is for reservation processing services only. 
-              Room charges are billed separately by the hotel.
+              <strong>Note:</strong> This invoice is for reservation processing
+              services only. Room charges are billed separately by the hotel.
             </p>
           </div>
 
@@ -429,10 +467,23 @@
             </div>
           </div>
         </div>
-        
-        <div class="footer-note">
-          For any queries regarding this invoice, please contact accounts@mytravaly.com
+
+        <div class="footer">
+          <img
+            src="https://mytravaly.com/logo.png"
+            alt="MyTravaly Logo"
+            class="footer-logo"
+          />
+          <div class="footer-text">
+            <p>
+              Powered by MyTravaly Worldwide Travel Technology Private Limited
+            </p>
+          </div>
         </div>
+
+        <p class="copyright">
+          © 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.
+        </p>
       </div>
     </div>
   </body>

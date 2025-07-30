@@ -201,7 +201,7 @@
       }
 
       .total-text {
-        flex: 1; 
+        flex: 1;
         font-size: 0.9em;
       }
 
@@ -211,7 +211,7 @@
 
       .total-numbers {
         flex: 1;
-        text-align: right; 
+        text-align: right;
         font-size: 0.9em;
       }
 
@@ -318,35 +318,67 @@
           font-size: 0.8em;
         }
       }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+        font-size: 10px;
+        color: #777;
+        border-top: 1px solid #eee;
+        flex-wrap: wrap;
+      }
+
+      .footer-logo {
+        height: 20px;
+      }
+
+      .footer-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .copyright {
+        font-size: 9px;
+        color: #777;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (max-width: 480px) {
+        .footer {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <div class="invoice-title">
-        TAX INVOICE — ROOM CHARGES<br>
-        MYTRAVALY — TAX INVOICE (Issued on behalf of New Property Name23)
-      </div>
-      
+      <div class="invoice-title">TAX INVOICE — ROOM CHARGES<br /></div>
+
       <div class="header-info">
         <!-- Wrapper for Padding -->
         <div class="header-wrapper">
           <img
-            src="https://dwq3yv87q1b43.cloudfront.net/public/static/logo/logov1.png"
+            src="https://dwq3yv87q1b43.cloudfront.net/private/booking-engine/settings/images/logo/17486118935032-283183592.jpeg"
             height="100px"
-            alt="Company Logo"
+            alt="Hotel Logo"
             class="logo"
           />
           <div class="company-details">
             <div class="company-name">
-              <h3>MyTravaly Worldwide Travel Technology</h3>
-              <h3>Private Limited</h3>
+              <h3>New Property Name23</h3>
             </div>
 
             <div class="company-address">
-              <p>Company ID: U63090KA2019PTC123414</p>
-              <p>171, Panduranga Nagar, 1st Cross, off B.G Road</p>
-              <p>Bengaluru Karnataka 560076</p>
+              <p>GSTIN: 22AAAAA0000A1Z5</p>
+              <p>Address</p>
               <p>India</p>
             </div>
           </div>
@@ -410,7 +442,6 @@
                 <thead>
                   <tr>
                     <th>Description</th>
-                    <!-- <th>SAC/HSN</th> -->
                     <th>Qty</th>
                     <th>Rate</th>
                     <th>Amount</th>
@@ -455,19 +486,20 @@
                 One Thousand Six Hundred Twelve Rupees and Eighty Paise only
               </i>
             </div>
-
-            <p class="small-font">
-              <strong>Standard declaration:</strong> "This invoice shows the discount agreed before supply and complies with Sec. 15(3) of CGST Act."
-            </p>
           </div>
 
           <div class="total-numbers total-section-right">
             <div>
               <div class="total-details individual-padding">
-                <p class="info-row"><strong>Total Taxable Value:</strong> ₹1440.00</p>
+                <p class="info-row">
+                  <strong>Total Taxable Value:</strong> ₹1440.00
+                </p>
                 <p class="info-row"><strong>Total Tax:</strong> ₹172.80</p>
                 <p class="info-row">
-                  <strong class="total-section-pointers">Total Invoice Value:</strong> ₹1612.80
+                  <strong class="total-section-pointers"
+                    >Total Invoice Value:</strong
+                  >
+                  ₹1612.80
                 </p>
               </div>
               <hr />
@@ -484,6 +516,23 @@
             </div>
           </div>
         </div>
+
+        <div class="footer">
+          <img
+            src="https://mytravaly.com/logo.png"
+            alt="MyTravaly Logo"
+            class="footer-logo"
+          />
+          <div class="footer-text">
+            <p>
+              Powered by MyTravaly Worldwide Travel Technology Private Limited
+            </p>
+          </div>
+        </div>
+
+        <p class="copyright">
+          © 2025 MyTravaly Technologies Pvt. Ltd. All rights reserved.
+        </p>
       </div>
     </div>
   </body>
